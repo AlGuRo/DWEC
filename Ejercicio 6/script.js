@@ -1,6 +1,5 @@
-
-let max;
 let min;
+let max;
 let numbers = [];
 
 do {
@@ -11,6 +10,8 @@ do {
 } while ((isNaN(min) || isNaN(max)));
 
 for (let i = min; i < max; i++) {
-  numbers.push(i);
+  if (i % 2 != 0) {
+    numbers.push(i);
+  }
 }
 document.getElementById("resultado").innerHTML = numbers;
