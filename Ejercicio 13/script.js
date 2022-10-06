@@ -9,3 +9,6 @@ const factorial = (number) => {
   }
   document.getElementById("resultado").innerHTML = "El factorial de " + number + " es " + result;
 };
+//Rehacer de forma recursiva
+
+
