@@ -1,17 +1,68 @@
 "use strict";
 
-let cadena = [];
-let caracter = "";
+let cadenas = [];
+let cadena = "";
 
-while (isNaN(caracter)) {
-  caracter = prompt("Introduce un carácter alfanumérico, número para terminar:");
-  if (isNaN(caracter)) {  
-    cadena.push(caracter);
+do {
+  cadena = prompt("Introduce un carácter alfanumérico, número para terminar:");
+  if (isNaN(cadena)) {
+    cadenas.push(cadena);
   }
-}
+  
+} while (isNaN(cadena));
 
-const cadenaCorta = (cadena) => {
-  cadena.reduce((a, b) => a.length <= b.length ? a : b);
+const cadenaCorta = (cadenas) => {
+  let shortest = "";
+  cadenas.forEach(element => {
+    if (element.length < shortest) {
+      shortest = element;
+    }
+  })
+
+  return shortest;
 };
 
-document.getElementById("cadenaCorta").innerHTML = cadenaCorta(cadena);
+document.getElementById("cadenaCorta").innerHTML = cadenaCorta(cadenas);
+
+const cadenaLarga = (cadenas) => {
+  let wider = "";
+  cadenas.forEach(element => {
+    if (element.length < wider) {
+      wider = element;
+    }
+  })
+
+  return wider;
+};
+
+document.getElementById("cadenaLarga").innerHTML = cadenaLarga(cadenas);
+
+
+const cadenaA = (cadenas) => {
+  let cadena = "";
+  cadenas.forEach(element => {
+    if (element.includes("a")) {
+      element.replaceAll(new RegExp("[^a]", "g"), "");
+      if (element > cadena) {
+        cadena = element;
+      }
+    }
+  });
+  return cadena;
+}
+
+document.getElementById("cadenaA").innerHTML = cadenaA(cadenas);
+
+
+const hayB = (cadenas) => {
+  let i = 0;
+  cadenas.forEach(element => {
+    if (element.includes("b")) {
+      i++;
+      console.log("Ejercicio 28 d: " + element);
+    }
+  });
+
+}
+
+hayB(cadenas);
