@@ -15,14 +15,14 @@ const pedirNumeros = () => {
   return numbers;
 };
 
-const altoBajo = () => {
-  let numbers = pedirNumeros();
+const ascDesc = () => {
+  let numbers = pedirNumeros().sort();
+  let reverse = numbers.reverse();
+  resultado.push(numbers);
+  resultado.push(reverse);
 
-  resultado.push(numbers.filter((n) => n % 2 === 0));
-  resultado.push(numbers.filter((n) => n % 2 !== 0));
-
-  return "Pares: " + resultado[0] + " <br> Impares: " + resultado[1];
+  return "Ascendente: " + resultado[0] + " <br> Descendente: " + resultado[1];
 };
 
 
-document.getElementById("resultado").innerHTML = altoBajo();
+document.getElementById("resultado").innerHTML = ascDesc();
