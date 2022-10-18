@@ -5,7 +5,7 @@ let caracter = "";
 
 while (isNaN(caracter)) {
   caracter = prompt("Introduce un carácter alfanumérico, número para terminar:");
-  if (isNaN(caracter)) {
+  if (isNaN(caracter)) {  
     cadena.push(caracter);
   }
 }
