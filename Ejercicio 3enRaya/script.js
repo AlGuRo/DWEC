@@ -1,11 +1,12 @@
 "use strict";
 let regex = /\([1-3],[1-3]\)/;
-let casillasDisponibles = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 const tablero = [
   ["", "", ""],
   ["", "", ""],
   ["", "", ""],
 ];
+
 let win = [
   ["0,0", "0,1", "0,2"], //Fila 0
   ["1,0", "1,1", "1,2"], //Fila 1 -
@@ -47,7 +48,7 @@ const jugar = (turno) => {
 
       if (tablero[row - 1][col - 1] === "") {
         tablero[row - 1][col - 1] = turno;
-
+        console.table(tablero);
         if (checkWin(turno)) {
           return true;
         }

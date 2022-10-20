@@ -15,9 +15,9 @@ const pedirNumeros = () => {
   return numbers;
 };
 
-const ascDesc = () => {
-  let numbers = pedirNumeros().sort();
-  let reverse = numbers.reverse();
+const ascDesc = (vector) => {
+  let numbers = vector.sort((a,b) => b - a);
+  let reverse = [...numbers].reverse();
   resultado.push(numbers);
   resultado.push(reverse);
 
@@ -25,4 +25,4 @@ const ascDesc = () => {
 };
 
 
-document.getElementById("resultado").innerHTML = ascDesc();
+document.getElementById("resultado").innerHTML = ascDesc([1,6,3,2,4]);
