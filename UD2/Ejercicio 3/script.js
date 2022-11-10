@@ -1,28 +1,43 @@
 "use strict";
 
-let rows = 10;
-let columns = 10;
+let number = 100;
 
-const button = document.querySelector("button");
+//Crear checkboxes
+let div = document.getElementById("container");
 
-//Populates table
-button.addEventListener("click", (event) => {
-  let number = 1;
-  let table = document.querySelector("table");
-  for (rows; rows >= 0; rows--) {
-    let tr = document.createElement("tr");
-    for (columns; columns >= 0; columns--) {
-      let td = document.createElement("td");
-      td.innerHTML = number;
-      tr.appendChild(td);
-      number++;
-    }
-    table.appendChild(tr);
-    
+const createCheckboxes = () => {
+  while (number > 0) {
+    let n = document.createElement("label");
+    n.textContent = number;
+
+    let checkbox = document.createElement("input");
+    checkbox.setAttribute("type", "checkbox");
+
+    div.appendChild(n);
+    div.appendChild(checkbox);
+    number--;
   }
-  
- 
+};
 
+//Botones
+let marcar = document.getElementById("marcar");
+let desmarcar = document.getElementById("desmarcar");
 
+marcar.addEventListener("click", () => {
+  let boxes = document.getElementById("container");
 
+  for (let element of boxes.children) {
+    element.checked = true;
+  }
 });
+
+desmarcar.addEventListener("click", () => {
+  let boxes = document.getElementById("container");
+
+  for (let element of boxes.children) {
+    element.checked = false;
+  }
+});
+
+
+createCheckboxes();
