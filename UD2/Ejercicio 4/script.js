@@ -1,5 +1,4 @@
 "use strict";
-
 //Se asignan e iteran los parrafos para anadirles el evento mouseover
 let parrafos = document.getElementsByTagName('p');
 for (let element of parrafos) {
@@ -10,10 +9,8 @@ for (let element of parrafos) {
 
   element.addEventListener('mouseout', () => {
     element.style.visibility  = "hidden";
-    console.log("hover");
   });
 }
-
 //Se asigna el boton con la funcionalidad de aparecer elementos ocultos
 let button = document.querySelector("button");
 button.addEventListener("click", () => {
@@ -21,5 +18,4 @@ button.addEventListener("click", () => {
   for (let element of parrafos) {
     element.style.visibility  = "visible";
   }
-
 });
